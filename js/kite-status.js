@@ -1,6 +1,6 @@
 export function getKiteStatus(request) {
 
-    const url = `https://raw.githubusercontent.com/kiteaai/web-kite-status-json/main/${request.src}.json`
+    const url = `https://kiteaai.github.io/web-kite-status-json/${request.src}.json`
 
     const status = fetchStatus(url).then(json => {
         
