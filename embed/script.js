@@ -19,7 +19,7 @@ getKiteStatus(options)
 
             document.body.innerHTML = template(status)
             
-            if ('parentIFrame' in window && options.type === 'alert') { window.parentIFrame.sendMessage('loaded') }        
+            if ('parentIFrame' in window) { window.parentIFrame.sendMessage('loaded') }        
             
         } else {
 
