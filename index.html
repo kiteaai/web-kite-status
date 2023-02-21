@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kite System Status</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">  
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js" integrity="sha512-dnvR4Aebv5bAtJxDunq3eE8puKAJrY9GBJYl9GC6lTOEC76s1dbDfJFcL9GyzpaDW4vlI/UjR8sKbc1j6Ynx6w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>      
+    <iframe class="w-100 d-none border-0" style="transition: height 0.25s ease" id="alert" onload="registerIFrame(this)" src="embed/alert?src=dev"></iframe>
+    
+    <div class="container p-5 mx-auto row">
+        <div class="row mb-4">
+            <div class="col-xl-6 mb-4">                            
+                <iframe class="w-100 border" id="ep" onload="registerIFrame(this)" src="embed/app?name=Educator%20Portal&src=dev"></iframe>
+            </div> 
+            <div class="col-xl-6 mb-4">
+                <iframe class="w-100 border" id="sp" onload="registerIFrame(this)" src="embed/app?name=Student%20Portal&src=dev"></iframe>
+            </div>  
+        </div>               
+    </div>
+      
+    <script>
+        
+        var options = {
+            log: false,
+            autoResize: true,
+            onMessage: function (e) {
+                if (e.message === 'loaded' && e.iframe.id === 'alert') {
+                    document.getElementById(e.iframe.id).classList.remove('d-none');                    
+                }
+            }
+        }
+
+        function registerIFrame(iframe) {
+            iFrameResize(options, `#${iframe.id}`);  
+        }
+        
+    </script>
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>      
+  </body>
+</html>

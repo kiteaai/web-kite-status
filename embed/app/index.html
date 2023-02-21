@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kite System Status</title>
+    <link href="../../style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+      <div class="loading">
+         <i class="bi bi-hourglass-split"></i>
+      </div>
+      
+      <script id="template" type="text/x-handlebars-template">
+
+         <div class="app">
+
+            <h1 class="title">
+               <b>Kite</b>
+               <img height="25" src="https://raw.githubusercontent.com/hilah-ats/ats-kite-status/main/favicon.svg" alt="kite logo" />
+               {{name}} 
+            </h1>
+
+            <div class="status">
+
+               <div class="state state-{{status.state}}">
+                  <b>{{status.name}}</b>
+                  <i class="icon">{{status.icon}}</i>
+               </div>
+
+               <i>Last Updated: {{status.lastUpdated}}</i>
+
+            </div>
+
+            <div class="message {{message.display}}">
+
+               <b>{{message.date}}</b>
+               <p>{{message.contents}}</p>
+
+               <div class="{{error.display}}">
+                  <div>The current status of the Kite Suite cannot be reached. Please contact <a class="text-light" href="mailto:aaiwebmaster@ku.edu">aaiwebmaster@ku.edu</a> with the following error code to resolve this issue.</div>
+                  <code>{{error.contents}}</code>
+               </div>
+
+            </div>
+
+            <hr class="{{uptime.display}}" />
+
+            <div class="uptime {{uptime.display}}">
+
+               <h2><b>Application Uptime</b></h2>
+               <h3><i>{{uptime.schoolYear}} School Year</i></h3>
+
+               <div class="graph">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 36">
+                     <circle cx="16" cy="16" r="15.9155" class="graph-background" />
+                     <circle cx="16" cy="16" r="15.9155" class="graph-progress" style="stroke-dashoffset:{{uptime.graphOffset}};" />
+                  </svg>
+                  <div class="percent">
+                     <span class="int">{{uptime.int}}</span>
+                     <span class="dec">{{uptime.dec}}</span>
+                  </div>
+               </div>
+
+            </div>
+
+         </div>  
+
+      </script>  
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>       
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js" integrity="sha512-14SY6teTzhrLWeL55Q4uCyxr6GQOxF3pEoMxo2mBxXwPRikdMtzKMYWy2B5Lqjr6PHHoGOxZgPaxUYKQrSmu0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="../script.js" type="module"></script>
+      
+  </body>
+</html>

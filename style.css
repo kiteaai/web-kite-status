@@ -1,0 +1,203 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+	margin: 0;
+	font-family:"Montserrat";
+}
+
+a, a:hover {
+    color: white;
+}
+
+h1 { font-size: 1.75em;}
+h2 { font-size: 1.3em; }
+h3 { font-size: 1em; }
+
+h1, h2, h3 {
+	margin-block: 0;
+	font-weight: normal;
+}
+
+p { 
+	margin-bottom: 0;
+	margin-top: 0.5em
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+hr { 
+	align-self: stretch; 
+    margin: 1rem 0;
+    border: 0;
+    border-top: 1px solid;
+    opacity: .25;
+}
+
+hr, i { color: black; }
+
+code {
+    background: #16222c;
+    color: white;
+	padding: 0.75em;
+	margin-top: 1em;
+	display: block;
+}
+
+i.icon {
+	font-family: "bootstrap-icons";
+	font-weight: 100;
+	font-style: normal;
+	position: relative;
+	top: 2px;
+}
+
+.loading {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    background: #ddd;
+    height: 300px;
+	width: 100%;
+}
+
+.loading i {
+	font-size: 2.2em;
+	opacity: 0.25;
+}
+
+.alert {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1em;
+	padding: 1em;
+	background: #DD1E36;
+	color: white;    
+}
+
+.alert i {
+	color: white;
+	padding-inline: 0.25em;
+}
+
+ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+}
+
+@media (min-width: 500px) {
+
+	ul {
+		gap: 0em;
+	}
+
+	li:nth-child(2)::before {
+		content: '|';
+		margin-left: 0.4em;
+		margin-right: 0.2em;
+	}
+	
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 1em;
+	padding: 1.5em;
+	color: #004c88;	
+}
+
+.title {
+	text-align: center;
+}
+
+.message {
+	padding: 1em;
+	background: #314555;
+	color: white;		
+}
+
+.status {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25em;
+}
+
+.state {
+	padding: 0.5em;
+	border-radius: 5px;
+	font-size: 0.95em;
+	text-transform: uppercase;	
+	text-align: center;
+	color: white;
+}
+
+.state i.icon {
+	padding-left: 5px;
+	color: inherit;
+}
+
+.state-0 { background: #076838;}
+
+.state-1 { background: #076838;}
+
+.state-2 { background: #fcd000; color: black; }
+
+.state-3 { background: #DD1E36; }
+
+.state-error { background: grey; }
+
+.uptime {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.graph { 
+	position: relative; 
+	margin-top: 1.5em; 
+}
+
+.percent {
+	position: absolute;
+	top: 33%;
+    left: 22%;
+	color: #2c456a;
+}
+
+.int { font-size: 2.5em; }
+
+.dec { font-size: 1.5em; }
+
+svg {
+  height: 175px;
+  transform: rotate(-90deg);
+  width: 175px;
+}
+
+.graph-background {
+  fill: none;
+  stroke: #e2eff0;
+  stroke-width: 2.5;
+}
+
+.graph-progress {
+  fill: none;
+  stroke: #076838;
+  stroke-dasharray: 100 100;
+  stroke-dashoffset: 100;
+  stroke-width: 2.5;
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.hidden {
+	display: none;
+}
