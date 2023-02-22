@@ -19,9 +19,9 @@ getKiteStatus(options)
 
             document.body.innerHTML = template(status) 
             
-            setTimeout(function() {
-                if ('parentIFrame' in window) { window.parentIFrame.sendMessage('loaded') }
-            }, 1000)
+            // setTimeout(function() {
+            //     if ('parentIFrame' in window) { window.parentIFrame.sendMessage('loaded') }
+            // }, 1000)
             
         } else {
 

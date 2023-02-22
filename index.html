@@ -28,14 +28,13 @@
             log: false,
             autoResize: true,
             onMessage: function (e) {
-                if (e.message === 'loaded' && e.iframe.id === 'alert') {
-                    document.getElementById(e.iframe.id).classList.remove('d-none');                    
-                }
+
             }
         }
 
         function registerIFrame(iframe) {
-            iFrameResize(options, `#${iframe.id}`);  
+            iFrameResize(options, `#${iframe.id}`)
+            document.getElementById(iframe.id).classList.remove('d-none')
         }
         
     </script>
