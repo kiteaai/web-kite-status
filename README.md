@@ -9,7 +9,7 @@ Currently in use on the following sites:
  - [https://ksassessments.org](https://ksassessments.org)
  - [https://dynamiclearningmaps.org](https://dynamiclearningmaps.org)
 
-Status data is currently tracked manually via a JSON file hosted on [jsonbin.io](https://jsonbin.io) and is **not** connected to the actual Kite applications (yet?).
+Status data is currently tracked manually via a JSON file hosted in another repository for ease of tracking, [Kite Status JSON](https://github.com/kiteaai/web-kite-status-json), and is **not** connected to the actual Kite applications (yet?).
 
 # How It Works ⚙️
 
