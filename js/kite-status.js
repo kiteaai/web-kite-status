@@ -68,13 +68,20 @@ function parseApp(status, appName) {
 
     //  Create a new Date from startDay (year doesn't matter we just need the month and the day in a date object).
     const start = new Date("2000/" + status.startDay)
+    // Set year to current year.
+    start.setYear(now.getFullYear())
 
     //  Calculate the current school year based on today's date and the start date.
     start.setFullYear(
         (now.getUTCMonth() >= start.getUTCMonth()) && (now.getUTCDate() >= start.getUTCDate()) ? 
             now.getFullYear() : now.getFullYear()-1)
-
-    const uptime = getUptime(app.outages, now, start)       
+    
+    // Calculate uptime, including only the outages from the current school year.
+    const uptime = getUptime(
+        app.outages.filter(outage => (new Date(outage.date)) >= start),
+        now, 
+        start
+    )       
 
     app.uptime = {
         "schoolYear": start.getFullYear() + " - " + ((start.getFullYear() + 1).toString().substr(-2)),
