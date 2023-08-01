@@ -66,7 +66,7 @@ function parseApp(status, appName) {
     const now = new Date()
     const nowFormatted = now.toLocaleString("en-US", { month: "long", day: "numeric", hour:"numeric", minute: "numeric"})
 
-    //  Create a new Date from startDay in the
+    //  Create a new Date from startDay in the current year.
     const start = new Date(`${now.getFullYear()}/${status.startDay}`)
 
     //  Calculate the current school year based on today's date and the start date.
