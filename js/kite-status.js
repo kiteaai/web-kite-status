@@ -86,7 +86,7 @@ function parseApp(status, appName) {
         "int": (uptime.includes('.') ? uptime.split('.')[0] :uptime+"%"),
         "dec": (uptime.includes('.') ? '.'+uptime.split('.')[1]+'%' : ''),
         "graphOffset": (100 - ((parseInt(uptime)/100) * 100)),
-        "display": (app.status > 1) ? "hidden" : ""
+        "display": (app.status > 0) ? "hidden" : ""
     }
 
     app.message = {
